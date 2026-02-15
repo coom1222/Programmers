@@ -1,0 +1,18 @@
+import java.util.*;
+
+class Solution {
+    public String solution(String phone_number) {
+        
+        int count = 0;
+        
+        char[] ch = phone_number.toCharArray();
+        
+        for (int i = 0; i < ch.length - 4; i++){
+            ch[i] = '*';
+        }
+        
+        
+        String answer = new String(ch);
+        return answer;
+    }
+}
