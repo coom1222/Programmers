@@ -1,27 +1,22 @@
 class Solution {
     public int solution(long num) {
-        int answer = 0;
+        return collatz(num, 0);
+    }
+    
+    private int collatz(long num, int count){
+        if (num == 1) {
+            return count;
+        }
         
-        if (num == 1){
-            return answer;
+        if (count == 500) {
+            return -1;
         }
-        for(int i = 0; i < 500; i++) {
-            if(i == 499) {
-                return -1;
-            }
-            if (num % 2 == 0) {
-                num = num / 2;
-                System.out.println(num);
-            } else {
-                num = num*3 + 1;
-                System.out.println(num);
-            }
-            answer++;
-            if (num == 1) {
-                break;
-            }
+        
+        // 재귀 호출, 지정된 조건문을 수행하고 카운트를 증가시켜 자기 자신 호출
+        if (num % 2 == 0) {
+            return collatz(num / 2, count + 1);
+        } else {
+            return collatz(num * 3 + 1, count + 1);
         }
-        System.out.println(answer);
-        return answer;
     }
 }
