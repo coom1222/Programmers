@@ -20,6 +20,7 @@ int main() {
 
     int arr[N][N];
     memset(arr, 0, N * N * sizeof(int));
+    //memset(arr, 0, sizeof(arr));
 
     for(int col = N-1; col >= 0; col--){
         if(isOdd(N)){
