@@ -24,7 +24,7 @@ public class Main {
 
         for (int row = 0; row < N; row++) {
             for (int col = 0; col < N; col++) {
-                System.out.printf("%d ", arr[row][col]);
+                System.out.print(arr[row][col] + " ");
             }
             System.out.println();
         }
